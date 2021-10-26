@@ -235,4 +235,13 @@ class MainController extends AbstractController
 
      Appliquer cette base à article.html.twig et articles.html.twig
     */
+
+    /**
+     * @Route("/dump", name="dump")
+     */
+    public function dumpElements()
+    {
+        // La fonction dump permet de debugger un élément du code pour l'analyser en profondeur
+        dd($this->tableau_categorie);
+    }
 }
