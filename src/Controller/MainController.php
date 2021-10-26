@@ -199,4 +199,40 @@ class MainController extends AbstractController
 
         return $this->render("categorie.html.twig", ['categorie' => $categorie]);
     }
+
+    /**
+     * @Route("/index", name="index")
+     */
+    public function index1()
+    {
+        return $this->render('index.html.twig');
+    }
+
+    // Exercice créer un fichier bases.html.twig qui aura 
+    /*
+
+        <!DOCTYPE html>
+        <html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% block stylesheets %}
+		{% endblock %}
+		<title>Document</title>
+        </head>
+        <body>
+
+            {% block header %}{% endblock %}
+
+            {% block main %}{% endblock %}
+
+            {% block footer %}{% endblock %}
+
+	    </body>
+    </html>
+	
+
+     Appliquer cette base à article.html.twig et articles.html.twig
+    */
 }
