@@ -4,21 +4,25 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 		<title>Document</title>
 	</head>
 	<body>
 		<h1>Liste des articles</h1>
-		{% for article in articles %}
-			<article>
-				<h2>
-					{# fonction path permet de rediriger vers une url grâce
-										                au nom de la route et des paramètres de cette route
-										                si besoin  #}
-					<a href="{{ path('article', {'id' : article.id}) }}">
-						{{ article.titre }}</a>
-				</h2>
-				<p>{{ article.contenu }}</p>
-			</article>
-		{% endfor %}
+		<div class="article">
+			{% for article in articles %}
+				<article>
+					<h2>
+						{# fonction path permet de rediriger vers une url grâce
+																										                au nom de la route et des paramètres de cette route
+																										                si besoin  #}
+						<a href="{{ path('article', {'id' : article.id}) }}">
+							{{ article.titre }}</a>
+					</h2>
+					<p>{{ article.contenu }}</p>
+				</article>
+			{% endfor %}
+		</div>
+
 	</body>
 </html>

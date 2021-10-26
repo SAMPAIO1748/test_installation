@@ -1,0 +1,40 @@
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  color: navy;
+}
+
+article {
+  border: solid 1px deepskyblue;
+  border-radius: 2px;
+  width: 80%;
+  margin: 1% auto;
+}
+
+.article {
+  width: 20%;
+  margin: 0 auto;
+  border: solid 2px darkblue;
+  border-radius: 5px;
+}
+
+.article h2 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: blue;
+}
+
+.categorie {
+  width: 20%;
+  margin: 0 auto;
+  border: solid 2px rgb(10, 10, 212);
+  border-radius: 5px;
+}
+
+.categorie h2 {
+  text-align: center;
+}
