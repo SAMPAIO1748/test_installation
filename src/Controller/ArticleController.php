@@ -28,4 +28,13 @@ class ArticleController extends AbstractController
         $articles = $articleRepository->findAll();
         return $this->render('article/articles.html.twig', ['articles' => $articles]);
     }
+
+    /**                     //Wildcard
+     * @Route("/bdd/article/{id}", name="article_show")
+     */
+    public function articleShow($id, ArticleRepository $articleRepository)
+    {
+        $article = $articleRepository->find($id);
+        return $this->render('article/article.html.twig', ['article' => $article]);
+    }
 }
