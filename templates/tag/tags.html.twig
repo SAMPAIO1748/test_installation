@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +7,14 @@
 		<title>Document</title>
 	</head>
 	<body>
+		{% for tag in tags %}
+			<h1>{{ tag.name }}</h1>
+			<h2>{{ tag.description }}</h2>
+			{% for article in tag.articles %}
+				<h3>{{ article.title }}</h3>
 
-		{% for article in articles %}
-			<h1>{{ article.title }}</h1>
-			<p>{{ article.content }}</p>
-			<h3>{{ article.date|date("d/m/Y")}}</h3>
-			<h3>{{ article.category.name }}</h3>
-			<h3>{{ article.tag.name }}</h3>
-			<hr>
+
+			{% endfor %}
 		{% endfor %}
 	</body>
 </html></body></html>
