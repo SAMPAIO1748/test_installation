@@ -66,4 +66,37 @@ class ArticleController extends AbstractController
 
         return $this->render('article/update_article.html.twig', ['articleForm' => $articleForm->createView()]);
     }
+
+    /**
+     * @Route("bdd/create/article/", name="article_create")
+     */
+    public function articleCreate(Request $request, EntityManagerInterface $entityManagerInterface)
+    {
+        // On instancie un nouvel article
+        $article = new Article();
+        $articleForm = $this->createForm(ArticleType::class, $article);
+        $articleForm->handleRequest($request);
+
+        if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+            $entityManagerInterface->persist($article);
+            $entityManagerInterface->flush();
+
+            return $this->redirectToRoute("article_list");
+        }
+
+        return $this->render('article/update_article.html.twig', ['articleForm' => $articleForm->createView()]);
+    }
+
+    /**
+     * @Route("bdd/delete/article/{id}", name="article_delete")
+     */
+    public function articleDelete($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManagerInterface)
+    {
+        $article = $articleRepository->find($id);
+        // remove = supprime
+        $entityManagerInterface->remove($article);
+        $entityManagerInterface->flush();
+
+        return $this->redirectToRoute('article_list');
+    }
 }
