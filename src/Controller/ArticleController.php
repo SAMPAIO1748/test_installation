@@ -76,4 +76,9 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute("article_list");
     }
+
+    // Ajouter une entité tag qui aura les propriétés name et description les 2 seront des string
+    // Remplir la table tag avec hors-série, saga, hors-continuité.
+    // Rajouter dans article la clé étrangère tag_id.
+    // Afficher pour chaque article son tag et afficher tous les articles d'un tag 
 }

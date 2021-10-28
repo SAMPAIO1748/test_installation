@@ -11,6 +11,10 @@
 		{% for category in categories %}
 			<h1 style="color : {{ category.color }} ">{{ category.name }}</h1>
 			<p>{{ category.description }}</p>
+			{% for article in category.articles %}
+				<h2>{{ article.title }}</h2>
+			{% endfor %}
+			<hr>
 		{% endfor %}
 	</body>
-</html>
+</html></body></html>

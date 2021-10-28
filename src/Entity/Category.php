@@ -34,6 +34,7 @@ class Category
      */
     private $color;
 
+    // La category a plusieurs articles qui lui sont associés donc la relation est OneToMany
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
      */

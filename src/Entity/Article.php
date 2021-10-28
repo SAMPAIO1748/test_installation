@@ -32,6 +32,8 @@ class Article
      */
     private $date;
 
+
+    // l'article a une category qui lui est associée donc la relation sera ManyToOne.
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
      */
