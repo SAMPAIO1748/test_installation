@@ -55,6 +55,15 @@ class ArticleController extends AbstractController
         $articleForm = $this->createForm(ArticleType::class, $article);
         $articleForm->handleRequest($request);
 
+        if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+            // persist préenregistre les données
+            $entityManagerInterface->persist($article);
+            // flush enregistre dans la base de données.
+            $entityManagerInterface->flush();
+
+            return $this->redirectToRoute("article_list");
+        };
+
         return $this->render('article/update_article.html.twig', ['articleForm' => $articleForm->createView()]);
     }
 }

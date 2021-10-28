@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\Category;
+use App\Entity\Tag;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,6 +19,14 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('content')
             ->add('date')
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name'
+            ])
+            ->add('tag', EntityType::class, [
+                'class' => Tag::class,
+                'choice_label' => 'name'
+            ])
             ->add('submit', SubmitType::class);
     }
 
