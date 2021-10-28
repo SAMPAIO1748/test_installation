@@ -74,13 +74,19 @@ class ArticleController extends AbstractController
     {
         // On instancie un nouvel article
         $article = new Article();
+        // On crée un formulaire
         $articleForm = $this->createForm(ArticleType::class, $article);
+        // Traitement des données du formulaire
         $articleForm->handleRequest($request);
 
+        // si le formulaire est soumis et validé
         if ($articleForm->isSubmitted() && $articleForm->isValid()) {
+            // on prérenrigistre les données de l'objet
             $entityManagerInterface->persist($article);
+            // On envoie dans la base de données.
             $entityManagerInterface->flush();
 
+            // On renvoie vers la route article_list
             return $this->redirectToRoute("article_list");
         }
 
