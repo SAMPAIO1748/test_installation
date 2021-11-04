@@ -105,4 +105,13 @@ class ArticleController extends AbstractController
 
         return $this->redirectToRoute('article_list');
     }
+
+    /**
+     * @Route("/admin/test", name="admin_test")
+     */
+    public function adminTest()
+    {
+        dump('Test');
+        die;
+    }
 }
