@@ -32,6 +32,7 @@ class Article
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Le contenu est obligatoire")
      */
     private $content;
 

@@ -42,3 +42,8 @@ p {
 footer h3 {
   text-align: center;
 }
+
+.button {
+  color: red;
+  background-color: darkblue;
+}

@@ -13,15 +13,16 @@
 
 {% block main %}
 	<main>
+
 		<div class="article">
-			{% for article in articles %}
+			{% for article in arts.getAll() %}
 				<article>
 					<h2>
 						{# fonction path permet de rediriger vers une url grâce au nom de la route et des paramètres de cette route si besoin  #}
 						<a href="{{ path('article', {'id' : article.id}) }}">
-							{{ article.titre }}</a>
+							{{ article.title }}</a>
 					</h2>
-					<p>{{ article.contenu }}</p>
+					<p>{{ article.content }}</p>
 				</article>
 			{% endfor %}
 		</div>
