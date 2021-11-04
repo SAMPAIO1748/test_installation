@@ -8,16 +8,16 @@
 	</head>
 	<body>
 
-		{{ form_start(userForm) }}
+		{{form_start(userForm)}}
 
-		{{ form_label(userForm.email, 'Votre email') }}
-		{{ form_widget(userForm.email) }}
+		{{form_label(userForm.email, 'Votre email') }}
+		{{form_widget(userForm.email)}}
 
-		{{ form_label(userForm.password, 'Votre mot de passe') }}
-		{{ form_widget(userForm.password) }}
+		{{form_label(userForm.password, 'Votre mot de passe')}}
+		{{form_widget(userForm.password)}}
 
-		{{ form_widget(userForm.submit) }}
-		{{ form_end(userForm) }}
+		{{form_widget(userForm.submit)}}
+		{{form_end(userForm)}}
 
 	</body>
 </html>

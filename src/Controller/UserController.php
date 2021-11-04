@@ -28,7 +28,9 @@ class UserController extends AbstractController
 
         if ($userForm->isSubmitted() && $userForm->isValid()) {
             $user->setRoles(["ROLE_USER"]);
+            // Récupération du mot de passe tapé dans le formulaire
             $plainPassword = $userForm->get('password')->getData();
+            // hashasge du mot de passe
             $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $plainPassword);
             $user->setPassword($hashedPassword);
             $entityManagerInterface->persist($user);
